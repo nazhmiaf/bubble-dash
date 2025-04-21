@@ -1,12 +1,16 @@
-import './App.css';
-import Bubble from './components/Bubble/Bubble';
-import Login from './components/Login/Login';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import Dashboard from "./pages/Dashboard";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
     <div className="App">
-      {/* <Bubble/> */}
-      <Login/>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LoginPage/>} />
+          <Route path="/Dashboard" element={<Dashboard/>} />
+        </Routes>
+      </Router>
     </div>
   );
 }

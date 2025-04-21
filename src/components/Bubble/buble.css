@@ -1,0 +1,165 @@
+.wrapper-bubble {
+    position: fixed;
+    padding-top: 250px;
+    padding-left: 100px;
+}
+
+.bubble {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: fixed;
+    opacity: 50%;
+    background-color: white;
+    
+}
+.wrapper-bubble2 {
+    position: fixed;
+    padding-top: 700px;
+    padding-left: 350px;
+}
+
+.bubble2 {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    position: fixed;
+    opacity: 30%;
+    background-color: white;
+    
+}
+.wrapper-bubble3 {
+    position: fixed;
+    padding-top: 50px;
+    padding-left: 400px;
+}
+
+.bubble3 {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    position: fixed;
+    opacity: 25%;
+    background-color: white;
+    
+}
+.wrapper-bubble4 {
+    position: fixed;
+    padding-top: 200px;
+    padding-left: 1500px;
+}
+
+.bubble4 {
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    position: fixed;
+    opacity: 40%;
+    background-color: white;
+    
+}
+.wrapper-bubble5 {
+    position: fixed;
+    padding-top: 550px;
+    padding-left: 1300px;
+}
+
+.bubble5 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: fixed;
+    opacity: 50%;
+    background-color: white;
+    
+}
+.wrapper-bubble6 {
+    position: fixed;
+    padding-top: 600px;
+    padding-left: 1700px;
+}
+
+.bubble6 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: fixed;
+    opacity: 22%;
+    background-color: white;
+    
+}
+.wrapper-bubble7 {
+    position: fixed;
+    padding-top: 755px;
+    padding-left: 1000px;
+}
+
+.bubble7 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: fixed;
+    opacity: 43%;
+    background-color: white;
+    
+}
+.wrapper-bubble8 {
+    position: fixed;
+    padding-top: 20px;
+    padding-left: 800px;
+}
+
+.bubble8 {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    position: fixed;
+    opacity: 25%;
+    background-color: white;
+    
+}
+.wrapper-bubble9 {
+    position: fixed;
+    padding-top: 70px;
+    padding-left: 1200px;
+}
+
+.bubble9 {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    position: fixed;
+    opacity: 30%;
+    background-color: white;
+    
+}
+
+@media screen and (max-width: 475px) {
+    .bubble {
+        display: none;
+    }
+    .bubble2 {
+        display: none;
+    }
+    .bubble3 {
+        display: none;
+    }
+    .bubble4 {
+        display: none;
+    }
+    .bubble5 {
+        display: none;
+    }
+    .bubble6 {
+        display: none;
+    }
+    .bubble8 {
+        display: none;
+    }
+    .bubble7 {
+        display: none;
+    }
+    .bubble9 {
+        display: none;
+    }
+}
