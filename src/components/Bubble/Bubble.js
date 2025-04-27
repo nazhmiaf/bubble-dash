@@ -2,7 +2,7 @@ import "./buble.css"
 
 const Bubble = () => {
     return (
-        <>
+        <div>
             <div className="wrapper-bubble">
                 <div className="bubble"></div>
             </div>
@@ -30,7 +30,7 @@ const Bubble = () => {
             <div className="wrapper-bubble9">
                 <div className="bubble7"></div>
             </div>
-        </>
+        </div>
     )
 }
 

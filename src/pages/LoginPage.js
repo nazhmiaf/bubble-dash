@@ -6,7 +6,7 @@ const LoginPage = () => {
     return (
         <div className="home-page h-screen bg-[#d4d4d4]">
             <Bubble/>
-            <Login/>
+            <Login/>          
         </div>
     )
 }
