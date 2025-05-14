@@ -19,12 +19,15 @@ const Sidebar = (props) => {
         <div className="p-3 pb-[120px] border-b">
           <button
             onClick={props.dashboard}
-            className={`hover:bg-gray-200 hover:font-semibold text-black  rounded-lg w-full transition-all text-left pt-2 pb-2 gap-3 flex pl-3 pr-3 ${props.onDashboard}`}
+            className={`hover:bg-gray-200 hover:font-semibold text-black rounded-lg w-full transition-all text-left pt-2 pb-2 gap-3 flex pl-3 pr-3 ${props.onDashboard}`}
           >
             <MdHome className="translate-y-[3px] -translate-x-[2px] text-2xl" />
             Dashboard
           </button>
-          <button className="hover:bg-gray-200 hover:font-semibold text-black   rounded-lg w-full transition-all text-left pt-2 pb-2 pl-3 pr-3 flex gap-4">
+          <button onClick={props.userManagement}
+            className={`hover:bg-gray-200 hover:font-semibold text-black rounded-lg w-full transition-all text-left pt-2 pb-2 gap-3 flex pl-3 pr-3 ${props.onUserManagement}`}
+
+          >
             <FaUserAlt className="translate-y-[3px] text-xl" />
             Manajemen User
           </button>

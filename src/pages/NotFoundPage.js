@@ -5,7 +5,7 @@ const NotFoundPage = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
-    navigate("/Dashboard");
+    navigate(-1);
   };
   return (
     <div className="h-screen bg-[#d4d4d4]">
