@@ -3,6 +3,7 @@ import Dashboard from "./pages/Dashboard";
 import LoginPage from "./pages/LoginPage";
 import DataPesanan from "./pages/DataPesanan";
 import NotFoundPage from "./pages/NotFoundPage";
+import ManajemenUser from "./pages/ManajemenUser";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<LoginPage/>} />
           <Route path="/Dashboard" element={<Dashboard/>} />
           <Route path="/DataPesanan" element={<DataPesanan/>} />
+          <Route path="/ManajemenUser" element={<ManajemenUser/>} />
           <Route path="*" element={<NotFoundPage/>} />
         </Routes>
       </Router>

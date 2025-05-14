@@ -2,41 +2,40 @@
 import { FaUser } from "react-icons/fa6";
 import { FaLock } from "react-icons/fa";
 import AdminDash from '../assets/images/admin.png';
-import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
 
 const Login = () => {
   const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [errorMsg, setErrorMsg] = useState('');
-
-  const navigate = useNavigate()
-
-  const handleLogin = async (e) => {
-    e.preventDefault()
-    try {
-      const res = await axios.get(`http://localhost:3001/admin`)
-      const user = res.data.find(
-        (user) => user.username === username && user.password === password
-      );
-      if (user) {
-        navigate("/Dashboard")
-      } else {
-        setErrorMsg("Username atau Password salah!");
+    const [password, setPassword] = useState('')
+    const [errorMsg, setErrorMsg] = useState('');
+  
+    const navigate = useNavigate()
+  
+    const fetchUser = async (e) => {
+      e.preventDefault()
+      try {
+        const res = await axios.get(`http://localhost:3001/admin`)
+        const user = res.data.find(
+          (user) => user.username === username && user.password === password
+        );
+        if (user) {
+          navigate("/Dashboard")
+        } else {
+          setErrorMsg("Username atau Password salah!");
+        }
+      } catch (error) {
+        console.error(error);
+        alert("Terjadi kesalahan saat login!");
       }
-    } catch (error) {
-      console.error(error);
-      alert("Terjadi kesalahan saat login!");
-    }
-  };
+    };
   
   return (
     <div className="absolute left-1/2 top-[40%] transform -translate-x-1/2 -translate-y-1/2 login flex justify-center items-center pt-[100px]">
 
       <div className="wrapper bg-white flex justify-center items-center flex-col p-[16px] w-[350px] rounded-xl shadow-md">
-        <form onSubmit={handleLogin} className="w-full" action="">
+        <form onSubmit={fetchUser} className="w-full" action="">
           <div className="title-mobile">
             <h1 className="text-3xl font-extrabold text-center text-[#ffc85c] border-b p-2">ADMIN DASH</h1>
           </div>
