@@ -1,67 +1,88 @@
-
 import { FaUser } from "react-icons/fa6";
 import { FaLock } from "react-icons/fa";
 import AdminDash from '../assets/images/admin.png';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { auth } from "../config/firebaseConfig";
+import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
 const Login = () => {
-  const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const [errorMsg, setErrorMsg] = useState('');
-  
-    const navigate = useNavigate()
-  
-    const fetchUser = async (e) => {
-      e.preventDefault()
-      try {
-        const res = await axios.get(`http://localhost:3001/admin`)
-        const user = res.data.find(
-          (user) => user.username === username && user.password === password
-        );
-        if (user) {
-          navigate("/Dashboard")
-        } else {
-          setErrorMsg("Username atau Password salah!");
-        }
-      } catch (error) {
-        console.error(error);
-        alert("Terjadi kesalahan saat login!");
-      }
-    };
-  
-  return (
-    <div className="absolute left-1/2 top-[40%] transform -translate-x-1/2 -translate-y-1/2 login flex justify-center items-center pt-[100px]">
+  const [email, setEmail] = useState(""); 
+  const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+  const navigate = useNavigate();
 
-      <div className="wrapper bg-white flex justify-center items-center flex-col p-[16px] w-[350px] rounded-xl shadow-md">
-        <form onSubmit={fetchUser} className="w-full" action="">
-          <div className="title-mobile">
-            <h1 className="text-3xl font-extrabold text-center text-[#ffc85c] border-b p-2">ADMIN DASH</h1>
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate("/dashboard");
+      }
+    });
+    return () => unsubscribe();
+  }, [navigate]);
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setErrorMsg("");
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate("/Dashboard");
+    } catch (error) {
+      setErrorMsg("Email atau password salah");
+    }
+  };
+
+  return (
+    <div className="absolute flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 login">
+      <div className="bg-white flex flex-col p-6 w-[350px] rounded-xl shadow-xl transition-all duration-300 ease-in-out">
+        <form onSubmit={handleLogin} className="w-full">
+          <h1 className="text-3xl font-extrabold text-center text-[#ffc85c] border-b pb-2">ADMIN DASH</h1>
+
+          <div className="flex items-center justify-center py-5">
+            <img src={AdminDash} className="w-[200px]" alt="Admin-Dash" />
           </div>
-          <div className="flex justify-center items-center pt-[20px] pb-[10px]">
-            <img src={AdminDash} className="w-[250px] " />
-          </div>
+
           {errorMsg && (
-            <div className="bg-red-100 text-red-700 p-2 rounded-md mb-3 text-sm border border-red-300">
+            <div className="p-2 mb-3 text-sm text-center text-red-700 bg-red-100 border border-red-300 rounded-md">
               {errorMsg}
             </div>
           )}
-          <div className="input-box h-[40px] relative mt-[5px] mb-[5px]">
-            <input value={username} className="border border-black rounded-2xl p-[10px] h-full w-full  " onChange={(e) => setUsername(e.target.value)}
-              type="text" placeholder="Username" required></input>
-            <FaUser className="-translate-y-1/2 absolute right-[20px] top-[50%]" />
+
+          <div className="relative mb-1">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              required
+              className="w-full h-10 pl-4 pr-10 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#ffc85c] transition"
+            />
+            <FaUser className="absolute text-gray-500 transform -translate-y-1/2 right-4 top-1/2" />
           </div>
-          <div className="input-box h-[40px] relative mt-[5px] mb-[20px]">
-            <input value={password} className="border border-black rounded-2xl p-[10px] h-full w-full  " onChange={(e) => setPassword(e.target.value)}
-              type="password" placeholder="Password" required></input>
-            <FaLock className="-translate-y-1/2 absolute right-[20px] top-[50%]" />
+
+          <div className="relative mb-6">
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              required
+              className="w-full h-10 pl-4 pr-10 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#ffc85c] transition"
+            />
+            <FaLock className="absolute text-gray-500 transform -translate-y-1/2 right-4 top-1/2" />
           </div>
-          <button type="submit" className="w-full bg-[#ffc85c] hover:bg-[#ffdb7a] pt-[5px] pb-[5px] rounded-xl">Sign in</button>
+
+          <button
+            type="submit"
+            className="w-full bg-[#ffc85c] hover:bg-[#ffdb7a] text-black font-semibold py-2 rounded-xl transition duration-150 active:scale-95 active:shadow-inner"
+          >
+            Sign in
+          </button>
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
