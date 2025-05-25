@@ -1,4 +1,3 @@
-import { FaAngleDown } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import Logout from "./Logout";
 

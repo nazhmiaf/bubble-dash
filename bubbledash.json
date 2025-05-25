@@ -1,238 +1,107 @@
 {
-  "admin": [
-    {
-      "id": "1",
-      "username": "admin-ojan",
-      "password": "fauzan12"
-    }
-  ],
-
-  "orders": [
-    {
-      "userId": "USR001",
-      "orderId": "ORD101",
-      "bedcover": 1,
-      "bedsheet": 2,
-      "blanket": 0,
-      "days": 2,
-      "deliveryTime": "17-19",
-      "pickupTime": "08-10",
-      "fragrance": "Lavender",
-      "weight": "3 kg",
-      "price": "Rp 45.000",
-      "status": "Pending",
-      "timestamp": "2025-04-23T08:10:00"
-    },
-    {
-      "userId": "USR002",
-      "orderId": "ORD102",
-      "bedcover": 0,
-      "bedsheet": 1,
-      "blanket": 1,
-      "days": 1,
-      "deliveryTime": "14-16",
-      "pickupTime": "09-11",
-      "fragrance": "Rose",
-      "weight": "2.5 kg",
-      "price": "Rp 35.000",
-      "status": "In Process",
-      "timestamp": "2025-04-22T14:30:00"
-    },
-    {
-      "userId": "USR003",
-      "orderId": "ORD103",
-      "bedcover": 2,
-      "bedsheet": 0,
-      "blanket": 2,
-      "days": 4,
-      "deliveryTime": "20-22",
-      "pickupTime": "10-12",
-      "fragrance": "Ocean",
-      "weight": "5 kg",
-      "price": "Rp 75.000",
-      "status": "Delivered",
-      "timestamp": "2025-04-21T10:45:00"
-    },
-    {
-      "userId": "USR004",
-      "orderId": "ORD104",
-      "bedcover": 1,
-      "bedsheet": 1,
-      "blanket": 1,
-      "days": 3,
-      "deliveryTime": "18-20",
-      "pickupTime": "13-15",
-      "fragrance": "Vanilla",
-      "weight": "4 kg",
-      "price": "Rp 60.000",
-      "status": "Cancelled",
-      "timestamp": "2025-04-20T09:15:00"
-    },
-    {
-      "userId": "USR005",
-      "orderId": "ORD105",
-      "bedcover": 0,
-      "bedsheet": 3,
-      "blanket": 0,
-      "days": 2,
-      "deliveryTime": "15-17",
-      "pickupTime": "07-09",
-      "fragrance": "Lemon",
-      "weight": "2 kg",
-      "price": "Rp 30.000",
-      "status": "Pending",
-      "timestamp": "2025-04-19T07:45:00"
-    },
-    
-    {
-      "userId": "USR006",
-      "orderId": "ORD106",
-      "bedcover": 1,
-      "bedsheet": 2,
-      "blanket": 1,
-      "days": 3,
-      "deliveryTime": "16-18",
-      "pickupTime": "08-10",
-      "fragrance": "Mint",
-      "weight": "4.5 kg",
-      "price": "Rp 65.000",
-      "status": "In Process",
-      "timestamp": "2025-04-18T10:20:00"
-    },
-    {
-      "userId": "USR007",
-      "orderId": "ORD107",
-      "bedcover": 0,
-      "bedsheet": 1,
-      "blanket": 0,
-      "days": 1,
-      "deliveryTime": "13-15",
-      "pickupTime": "09-11",
-      "fragrance": "Jasmine",
-      "weight": "2 kg",
-      "price": "Rp 25.000",
-      "status": "Pending",
-      "timestamp": "2025-04-17T12:00:00"
-    },
-    {
-      "userId": "USR008",
-      "orderId": "ORD108",
-      "bedcover": 2,
-      "bedsheet": 2,
-      "blanket": 2,
-      "days": 5,
-      "deliveryTime": "19-21",
-      "pickupTime": "11-13",
-      "fragrance": "Fresh Linen",
-      "weight": "6 kg",
-      "price": "Rp 90.000",
-      "status": "Delivered",
-      "timestamp": "2025-04-16T14:15:00"
-    },
-    {
-      "userId": "USR009",
-      "orderId": "ORD109",
-      "bedcover": 1,
-      "bedsheet": 0,
-      "blanket": 1,
-      "days": 2,
-      "deliveryTime": "17-19",
-      "pickupTime": "10-12",
-      "fragrance": "Citrus",
-      "weight": "3.5 kg",
-      "price": "Rp 50.000",
-      "status": "Cancelled",
-      "timestamp": "2025-04-15T09:30:00"
-    },
-    {
-      "userId": "USR010",
-      "orderId": "ORD110",
-      "bedcover": 0,
-      "bedsheet": 2,
-      "blanket": 0,
-      "days": 1,
-      "deliveryTime": "14-16",
-      "pickupTime": "07-09",
-      "fragrance": "Sandalwood",
-      "weight": "2.2 kg",
-      "price": "Rp 28.000",
-      "status": "Pending",
-      "timestamp": "2025-04-14T07:45:00"
-    },
-    {
-      "userId": "USR011",
-      "orderId": "ORD111",
-      "bedcover": 1,
-      "bedsheet": 3,
-      "blanket": 2,
-      "days": 4,
-      "deliveryTime": "20-22",
-      "pickupTime": "12-14",
-      "fragrance": "Coconut",
-      "weight": "7 kg",
-      "price": "Rp 100.000",
-      "status": "Delivered",
-      "timestamp": "2025-04-13T11:50:00"
-    },
-    {
-      "userId": "USR012",
-      "orderId": "ORD112",
-      "bedcover": 0,
-      "bedsheet": 1,
-      "blanket": 0,
-      "days": 1,
-      "deliveryTime": "15-17",
-      "pickupTime": "08-10",
-      "fragrance": "Cherry Blossom",
-      "weight": "1.8 kg",
-      "price": "Rp 22.000",
-      "status": "Pending",
-      "timestamp": "2025-04-12T08:25:00"
-    },
-    {
-      "userId": "USR013",
-      "orderId": "ORD113",
-      "bedcover": 2,
-      "bedsheet": 0,
-      "blanket": 1,
-      "days": 3,
-      "deliveryTime": "18-20",
-      "pickupTime": "09-11",
-      "fragrance": "Green Tea",
-      "weight": "4 kg",
-      "price": "Rp 60.000",
-      "status": "In Process",
-      "timestamp": "2025-04-11T09:40:00"
-    },
-    {
-      "userId": "USR014",
-      "orderId": "ORD114",
-      "bedcover": 0,
-      "bedsheet": 2,
-      "blanket": 2,
-      "days": 5,
-      "deliveryTime": "19-21",
-      "pickupTime": "10-12",
-      "fragrance": "Peach",
-      "weight": "5.5 kg",
-      "price": "Rp 80.000",
-      "status": "Delivered",
-      "timestamp": "2025-04-10T13:10:00"
-    },
-    {
-      "userId": "USR015",
-      "orderId": "ORD115",
-      "bedcover": 1,
-      "bedsheet": 1,
-      "blanket": 1,
-      "days": 2,
-      "deliveryTime": "17-19",
-      "pickupTime": "08-10",
-      "fragrance": "Apple",
-      "weight": "3 kg",
-      "price": "Rp 45.000",
-      "status": "Pending",
-      "timestamp": "2025-04-09T07:55:00"
-    }
-  ]
+  "user1": {
+    "nama": "Udin Gondrong",
+    "email": "udin.gondrong@email.com",
+    "alamat": "Cibaduyut",
+    "password": "gondrong123",
+    "telp": "081234567001"
+  },
+  "user2": {
+    "nama": "Jabrik Kemplu",
+    "email": "jabrik.kemplu@email.com",
+    "alamat": "Sunter",
+    "password": "kemplu456",
+    "telp": "081234567002"
+  },
+  "user3": {
+    "nama": "Entis Sutisna",
+    "email": "entis@email.com",
+    "alamat": "Tanjung Priok",
+    "password": "entisss",
+    "telp": "081234567003"
+  },
+  "user4": {
+    "nama": "Otong Lemper",
+    "email": "otong.lemper@email.com",
+    "alamat": "Cimahi",
+    "password": "lemper88",
+    "telp": "081234567004"
+  },
+  "user5": {
+    "nama": "Jajang Buncit",
+    "email": "jajang.buncit@email.com",
+    "alamat": "Kebon Jeruk",
+    "password": "buncit123",
+    "telp": "081234567005"
+  },
+  "user6": {
+    "nama": "Eman Gocap",
+    "email": "eman.gocap@email.com",
+    "alamat": "Pamulang",
+    "password": "gocapgocap",
+    "telp": "081234567006"
+  },
+  "user7": {
+    "nama": "Acep Kriting",
+    "email": "acep.kriting@email.com",
+    "alamat": "Depok Lama",
+    "password": "kriting789",
+    "telp": "081234567007"
+  },
+  "user8": {
+    "nama": "Ujang Paku",
+    "email": "ujang.paku@email.com",
+    "alamat": "Bojong",
+    "password": "paku999",
+    "telp": "081234567008"
+  },
+  "user9": {
+    "nama": "Sule Jangkung",
+    "email": "sule.jangkung@email.com",
+    "alamat": "Majalaya",
+    "password": "jangkung44",
+    "telp": "081234567009"
+  },
+  "user10": {
+    "nama": "Darto Garing",
+    "email": "darto.garing@email.com",
+    "alamat": "Garut",
+    "password": "garing555",
+    "telp": "081234567010"
+  },
+  "user11": {
+    "nama": "Mang Eep",
+    "email": "mang.eep@email.com",
+    "alamat": "Ujung Berung",
+    "password": "mangeep",
+    "telp": "081234567011"
+  },
+  "user12": {
+    "nama": "Aceng Koplak",
+    "email": "aceng.koplak@email.com",
+    "alamat": "Tasik",
+    "password": "koplak22",
+    "telp": "081234567012"
+  },
+  "user13": {
+    "nama": "Dudung Cetek",
+    "email": "dudung.cetek@email.com",
+    "alamat": "Bekasi Timur",
+    "password": "cetek33",
+    "telp": "081234567013"
+  },
+  "user14": {
+    "nama": "Komar Bedil",
+    "email": "komar.bedil@email.com",
+    "alamat": "Plered",
+    "password": "bedil007",
+    "telp": "081234567014"
+  },
+  "user15": {
+    "nama": "Edi Jebret",
+    "email": "edi.jebret@email.com",
+    "alamat": "Kopo",
+    "password": "jebret09",
+    "telp": "081234567015"
+  }
 }

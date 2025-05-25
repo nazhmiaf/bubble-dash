@@ -1,47 +1,52 @@
 import { MdLocalLaundryService, MdHome } from "react-icons/md";
 import { FaMapMarkerAlt, FaUserAlt } from "react-icons/fa";
-import { IoIosMenu } from "react-icons/io";
 import Admin from "../components/Admin";
+import NavigationBar from "./NavigationBar";
+import ButtonComponent from "./ButtonComponent";
+import { useLocation } from "react-router-dom";
 
 const Sidebar = (props) => {
+  const location = useLocation();
+
+  const isActive = (path) =>
+    location.pathname === path
+      ? "bg-gray-100 font-semibold hover:bg-gray-100 text-orange-400 hover:text-orange-400"
+      : "text-black hover:text-orange-400";
+
   return (
     <div>
-      <nav className="fixed top-0 left-0 w-full h-14 bg-white border-b z-10 flex items-center px-4">
-        <IoIosMenu className="block text-xl text-left sm:hidden" />
-        <h1 className="italic font-extrabold text-2xl hidden sm:block">
-          Admin Dash
-        </h1>
-      </nav>
+      <NavigationBar />
       <aside className="hidden md:block fixed top-0 left-0 h-screen w-[250px] bg-white border-r shadow-lg z-20 translate-y-14">
         <div>
           <Admin />
         </div>
         <div className="p-3 pb-[120px] border-b">
-          <button
+          <ButtonComponent
             onClick={props.dashboard}
-            className={`hover:bg-gray-200 hover:font-semibold text-black rounded-lg w-full transition-all text-left pt-2 pb-2 gap-3 flex pl-3 pr-3 ${props.onDashboard}`}
-          >
-            <MdHome className="translate-y-[3px] -translate-x-[2px] text-2xl" />
-            Dashboard
-          </button>
-          <button onClick={props.userManagement}
-            className={`hover:bg-gray-200 hover:font-semibold text-black rounded-lg w-full transition-all text-left pt-2 pb-2 gap-3 flex pl-3 pr-3 ${props.onUserManagement}`}
+            label="Dashboard"
+            handleClick={isActive("/Dashboard")}
+            icon={<MdHome/>}
+          />
+          <ButtonComponent
+            onClick={props.userManagement}
+            label="Manajemen User"
+            handleClick={isActive("/ManajemenUser")}
+            icon={<FaUserAlt/>}
+          />
 
-          >
-            <FaUserAlt className="translate-y-[3px] text-xl" />
-            Manajemen User
-          </button>
-          <button
+          <ButtonComponent
             onClick={props.orderList}
-            className={`hover:bg-gray-200 hover:font-semibold text-black  rounded-lg w-full transition-all text-left pt-2 pb-2 gap-3 flex pl-3 pr-3 ${props.onOrderList}`}
-          >
-            <MdLocalLaundryService className="translate-y-[1px] -translate-x-[2px] text-2xl" />
-            Pesanan
-          </button>
-          <button className="hover:bg-gray-200 text-black hover:font-semibold  rounded-lg w-full transition-all text-left pt-2 pb-2 flex gap-4 pl-3 pr-3">
-            <FaMapMarkerAlt className="translate-y-[3px] text-xl" /> Live
-            Tracking
-          </button>
+            label="Pesanan"
+            handleClick={isActive("/DataPesanan")}
+            icon={<MdLocalLaundryService/>}
+          />
+
+          <ButtonComponent
+            label="Live Tracking"
+            icon={<FaMapMarkerAlt />}
+            handleClick={isActive("/liveTracking")}
+            onClick={props.liveTracking}
+          />
         </div>
       </aside>
     </div>
